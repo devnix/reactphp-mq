@@ -318,9 +318,10 @@ class Queue implements \Countable
      * $q = new Queue(10, null, array($browser, 'get'));
      * ```
      *
+     * @template TIn
      * @param int                                    $concurrency concurrency soft limit
      * @param int|null                               $limit       queue hard limit or NULL=unlimited
-     * @param callable(mixed):PromiseInterface<T> $handler
+     * @param callable(TIn):PromiseInterface<T> $handler
      * @throws \InvalidArgumentException
      */
     public function __construct($concurrency, $limit, $handler)
